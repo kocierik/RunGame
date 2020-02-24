@@ -1,0 +1,64 @@
+﻿<Window x:Class="sprinter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:sprinter"
+        mc:Ignorable="d"
+        Title="RUN" Height="350" Width="525" WindowStartupLocation="CenterScreen" MaxHeight="350" MinHeight="350" MinWidth="525" MaxWidth="525"  FocusManager.FocusedElement="{Binding ElementName=MyCanvas1}">
+    <Grid x:Name="game">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF323030" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="title" Content="Run" FontStyle="Oblique"  FontSize="30" FontWeight="UltraLight" HorizontalAlignment="Left" Margin="209,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Foreground="White"/>
+
+        <Canvas x:Name="MyCanvas1" KeyDown="Canvas_KeyDown1" Focusable="True" Grid.ColumnSpan="2" Margin="10,90,49,77" >
+            <Image Source="https://www.saventflags.com/images/commerce/CHEQ.jpg" Height="30" Width="113" Canvas.Left="383" Canvas.Top="85" RenderTransformOrigin="0.266,1.012" >
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="3" ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="90"/>
+                        <TranslateTransform X="-4.396" Y="-65.236"/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <TextBox x:Name="player11" Focusable="True" MaxWidth="52" MaxLength="20"  Width="52" Height="15" MaxHeight="15" Canvas.Top="38" Text="Username1" TextWrapping="Wrap" Background="{x:Null}" FontSize="8" FontWeight="Bold" FontStyle="Normal" Foreground="White" AutomationProperties.HelpText="Insert your name"  Panel.ZIndex="2" BorderBrush="{x:Null}" />
+            <TextBox x:Name="player22" Focusable="True" MaxWidth="52" MaxLength="20" Width="52" Height="15" MaxHeight="15" Canvas.Top="108" Text="Username2" TextWrapping="Wrap" Background="{x:Null}" FontSize="8" FontWeight="Bold" FontStyle="Normal" Foreground="White" AutomationProperties.HelpText="Insert your name!"  Panel.ZIndex="2" BorderBrush="{x:Null}" />
+
+            <Rectangle x:Name="player_1" Fill="blue" Height="30" Stroke="White" Width="30" Canvas.Left="54" Canvas.Top="32" />
+            <Rectangle x:Name="player_2" Fill="red" Height="30" Stroke="White" Width="30" Canvas.Left="54" Canvas.Top="102" />
+        </Canvas>
+        <Button x:Name="btn_play" Content="Play" Foreground="White" FontStyle="Oblique" HorizontalAlignment="Left" Margin="185,282,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="107" Height="25" Background="{x:Null}" BorderBrush="White" Click="Play"/>
+        <TextBlock x:Name="txtTimer" Grid.Column="1" HorizontalAlignment="Left" Margin="132,291,0,0" Text="tempo: 00:00" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontStyle="Oblique" FontWeight="Bold"/>
+        <TextBlock x:Name="Countdown" HorizontalAlignment="Left" Margin="209,60,0,0" Text="CountDown" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" FontStyle="Oblique" FontWeight="Bold" Grid.ColumnSpan="2" RenderTransformOrigin="0.597,0.88" Width="83"/>
+        <Button x:Name="Btn_reset" Content="resume"   Foreground="White" FontStyle="Oblique" HorizontalAlignment="Left" Margin="53,282,0,0" VerticalAlignment="Top" Width="70" Height="25" Background="{x:Null}" BorderBrush="White" Click="Resume" Cursor="Arrow" OpacityMask="Black">
+        </Button>
+        <Button Content="LeaderBoard" Grid.Column="1" Focusable="False" HorizontalAlignment="Left" Margin="116,35,0,0" FontStyle="Oblique" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" Width="86" BorderBrush="White" Height="25" Click="Leaderboard"/>
+        <Rectangle HorizontalAlignment="Left" Height="10" Margin="0,169,0,0" Stroke="White" Fill="White" VerticalAlignment="Top" Width="469" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="10" Margin="0,235,0,0" Stroke="White" Fill="White" VerticalAlignment="Top" Width="469" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="10" Margin="0,96,0,0" Stroke="White" Fill="White" VerticalAlignment="Top" Width="469" Grid.ColumnSpan="2"/>
+        <Rectangle HorizontalAlignment="Left" Height="9" Margin="-70,166,0,0" Stroke="White" Fill="White" VerticalAlignment="Top" Width="148" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="90.362"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+
+
+
+
+    </Grid>
+</Window>
